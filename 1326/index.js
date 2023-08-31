@@ -1,8 +1,3 @@
-const EXAMPLES = [
-  { n: 5, ranges: [3, 4, 1, 1, 0, 0], expectedResult: 1 },
-  { n: 3, ranges: [0, 0, 0, 0], expectedResult: -1 },
-];
-
 const clamper = function (min, max) {
   return (value) => {
     if (value < min) return min;
@@ -61,19 +56,6 @@ const minTaps = (n, ranges) => {
   else return numEffectiveTaps;
 };
 
-const run = (exampleId) => {
-  const { n, ranges, expectedResult } = EXAMPLES[exampleId];
-  console.log(`running example ${exampleId}..`);
-  console.log(`input: n=${n}, ranges=${ranges}`);
-  const result = minTaps(n, ranges);
-  console.log(`output: ${result}`);
-
-  if (result !== expectedResult) {
-    console.log(`FAILED. expected ${expectedResult}`);
-  } else {
-    console.log("success");
-  }
+module.exports = {
+  minTaps,
 };
-
-run(0);
-run(1);
